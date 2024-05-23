@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: chat_bot
+    env: python
+    plan: free
+    repo: https://github.com/mishalhossin/Discord-AI-Chatbot.git
+    buildCommand: pip3 install -r requirements.txt --no-cache-dir
+    startCommand: python3 main.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: API_KEY
+        sync: false
+    autoDeploy: false # optional
